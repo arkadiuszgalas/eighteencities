@@ -3,11 +3,12 @@ tstSZCZECIN|tstPL-ZP
 tstGDAŃSK|tstPL-PM
 tstOLSZTYN|tstPL-WN
 tstBIALYSTOK|tstPL-PD
+tstBYDGOSZCZ|tstPL-KP
+tstTORUŃ|tstPL-KP
+tstLUBLIN|tstPL-LU
 tstGORZÓW WIELKOPOLSKI|tstPL-08
 tstZIELONA GÓRA|tstPL-08
 tstPOZNAŃ|tstPL-WP
-tstBYDGOSZCZ|tstPL-KP
-tstTORUN|tstPL-KP
-tstLUBLIN|tstPL-LU
+tstŁÓDŹ|tstPL-10
 tstWROCŁAW|tstPL-02
 tstOPOLE|tstPL-16
