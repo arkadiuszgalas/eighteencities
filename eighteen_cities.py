@@ -70,13 +70,13 @@ def calculate_last_saturday_date(tg_month, tg_year):
 
 
 # Reading external file big-cities.txt containing list of polish big cities
-bigcities = open("/Users/arkadiuszgalas/Documents/python/eighteen-cities/available/provincial-cities.txt", encoding="utf8")
+bigcities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/provincial-cities.txt", encoding="utf8")
 data = bigcities.read()
 bigcities_list = data.split("\n")
 bigcities.close()
 
 # Reading external file special-city.txt containing name of special (last) city
-special_city = open("/Users/arkadiuszgalas/Documents/python/eighteen-cities/available/special-city.txt")
+special_city = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/special-city.txt")
 data_special = special_city.read()
 data_special_list = data_special.split("\n")
 special_city.close()

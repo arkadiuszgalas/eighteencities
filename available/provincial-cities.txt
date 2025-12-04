@@ -1,8 +1,7 @@
-tstKATOWICE|tstPL-SL
 tstSZCZECIN|tstPL-ZP
 tstGDAŃSK|tstPL-PM
 tstOLSZTYN|tstPL-WN
-tstBIALYSTOK|tstPL-PD
+tstBIAŁYSTOK|tstPL-PD
 tstBYDGOSZCZ|tstPL-KP
 tstTORUŃ|tstPL-KP
 tstLUBLIN|tstPL-LU
@@ -10,5 +9,7 @@ tstGORZÓW WIELKOPOLSKI|tstPL-08
 tstZIELONA GÓRA|tstPL-08
 tstPOZNAŃ|tstPL-WP
 tstŁÓDŹ|tstPL-10
+tstKIELCE|tstPL-26
 tstWROCŁAW|tstPL-02
 tstOPOLE|tstPL-16
+tstKATOWICE|tstPL-SL
