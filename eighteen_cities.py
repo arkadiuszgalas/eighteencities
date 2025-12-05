@@ -85,7 +85,7 @@ special_city.close()
 len_bigcities = len(bigcities_list)
 
 # Reading external file restricted-cities.txt with list of cities excluded from drawing
-restricted_cities = open("/Users/arkadiuszgalas/Documents/python/eighteen-cities/restricted/restricted-cities.txt")
+restricted_cities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/restricted/restricted-cities.txt")
 data_restricted = restricted_cities.read()
 restricted_cities_list = data_restricted.split("\n")
 restricted_cities.close()
@@ -117,18 +117,18 @@ date_selected = datetime.datetime(year_selected, month_selected, last_day_select
 
 # Decision logic what information save in selected-cities.txt and in restricted-cities.txt
 if len_bigcities >= len_restricted_cities:
-    cities_selected = open("/Users/arkadiuszgalas/Documents/python/eighteen-cities/selected/selected-cities.txt", "a")
+    cities_selected = open("/Users/arkadiuszgalas/Documents/python/eighteencities/selected/selected-cities.txt", "a")
     cities_selected.write(
         current_dttm_fm + str(" ") + date_selected.strftime("%d.%m.%Y") + str(" ") + str(city_sel_name) + str(
             " ") + str(area_sel_name) + "\n")
     cities_selected.close()
 
     # Writing information about selected city to restricted-cities.txt
-    cities_restricted = open("/Users/arkadiuszgalas/Documents/python/eighteen-cities/restricted/restricted-cities.txt", "a")
+    cities_restricted = open("/Users/arkadiuszgalas/Documents/python/eighteencities/restricted/restricted-cities.txt", "a")
     cities_restricted.write(str(city_sel_name) + "\n")
     cities_restricted.close()
 else:
-    cities_selected = open("/Users/arkadiuszgalas/Documents/python/eighteen-cities/selected/selected-cities.txt", "a")
+    cities_selected = open("/Users/arkadiuszgalas/Documents/python/eighteencities/selected/selected-cities.txt", "a")
     cities_selected.write(
         current_dttm_fm + str(" ") + str("No more cities on the list. I hope you had a great time." + "\n"))
     cities_selected.close()
