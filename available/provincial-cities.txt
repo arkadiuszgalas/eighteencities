@@ -10,6 +10,7 @@ tstZIELONA GÓRA|tstPL-08
 tstPOZNAŃ|tstPL-WP
 tstŁÓDŹ|tstPL-10
 tstKIELCE|tstPL-26
+tstRZESZÓW|tstPL-18
 tstWROCŁAW|tstPL-02
 tstOPOLE|tstPL-16
 tstKATOWICE|tstPL-SL
