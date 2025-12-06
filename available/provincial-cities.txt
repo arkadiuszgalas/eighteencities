@@ -8,7 +8,7 @@ tstLUBLIN|tstPL-LU
 tstGORZÓW WIELKOPOLSKI|tstPL-08
 tstZIELONA GÓRA|tstPL-08
 tstPOZNAŃ|tstPL-WP
-tstŁÓDŹ|tstPL-10
+ŁÓDŹ|PL-10
 tstKIELCE|tstPL-26
 tstRZESZÓW|tstPL-18
 tstWROCŁAW|tstPL-02
