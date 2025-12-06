@@ -11,7 +11,7 @@ list_month_28_29 = {2}
 def select_polish_city(bcities_list, rcities_list):
     city_selected = False
     i = 0
-    while city_selected == False:
+    while not city_selected:
         i = random.randint(0, len(bcities_list) - 1)
         city_selected_name = bcities_list[i][:bcities_list[i].find("|")]
 
@@ -69,7 +69,7 @@ def calculate_last_saturday_date(tg_month, tg_year):
     return month_days
 
 
-# Reading external file big-cities.txt containing list of polish big cities
+# Reading external file big-cities.txt containing list of Polish big cities
 bigcities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/provincial-cities.txt", encoding="utf8")
 data = bigcities.read()
 bigcities_list = data.split("\n")
@@ -95,6 +95,7 @@ len_restricted_cities = len(restricted_cities_list) - 1
 
 # Decision logic what file to select city
 city_sel_name = ''
+area_sel_name = ''
 if len_bigcities > len_restricted_cities:
     bigcity_selected = select_polish_city(bigcities_list, restricted_cities_list)
     city_sel_name = bigcity_selected[0:bigcity_selected.find("|")]
