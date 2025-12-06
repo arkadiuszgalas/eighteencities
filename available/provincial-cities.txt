@@ -14,3 +14,4 @@ tstRZESZÓW|tstPL-18
 tstWROCŁAW|tstPL-02
 tstOPOLE|tstPL-16
 tstKATOWICE|tstPL-SL
+tstKRAKÓW|tstPL-12
