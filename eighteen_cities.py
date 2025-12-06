@@ -8,16 +8,16 @@ list_month_28_29 = {2}
 
 
 # Function selecting city and area code to list
-def select_polish_city(bcities_list, rcities_list):
+def select_polish_city(provincial_cities_list, rcities_list):
     city_selected = False
     i = 0
     while not city_selected:
-        i = random.randint(0, len(bcities_list) - 1)
-        city_selected_name = bcities_list[i][:bcities_list[i].find("|")]
+        i = random.randint(0, len(provincial_cities_list) - 1)
+        city_selected_name = provincial_cities_list[i][:provincial_cities_list[i].find("|")]
 
         if city_selected_name not in rcities_list:
             city_selected = True
-    return bcities_list[i]
+    return provincial_cities_list[i]
 
 
 # Function drawing number of months
