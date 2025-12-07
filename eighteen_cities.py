@@ -6,16 +6,15 @@ list_month_31 = {1, 3, 5, 7, 8, 10, 12}
 list_month_30 = {4, 6, 9, 11}
 list_month_28_29 = {2}
 
-
-# Function selecting city and area code to list
-def select_polish_city(provincial_cities_list, rcities_list):
+# Function draws city and area code from input list
+def select_polish_city(provincial_cities_list,excluded_cities_list):
     city_selected = False
     i = 0
     while not city_selected:
         i = random.randint(0, len(provincial_cities_list) - 1)
         city_selected_name = provincial_cities_list[i][:provincial_cities_list[i].find("|")]
 
-        if city_selected_name not in rcities_list:
+        if city_selected_name not in excluded_cities_list:
             city_selected = True
     return provincial_cities_list[i]
 
@@ -56,7 +55,6 @@ def calculate_last_saturday_date(tg_month, tg_year):
         month_days = 29
     else:
         month_days = 28
-    dt = datetime.datetime(tg_year, tg_month, month_days)
 
     saturday_found = False
     while saturday_found == False:
