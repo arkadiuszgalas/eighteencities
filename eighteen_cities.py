@@ -25,7 +25,7 @@ def draw_number_of_months():
     return number_months
 
 
-# Function adding number of months to current month and returs number of future month
+# Function adds number of months to current month
 def calculate_target_month(n_months):
     current_dt = datetime.datetime.now()
     current_mth = current_dt.month
@@ -57,7 +57,7 @@ def calculate_last_saturday_date(tg_month, tg_year):
         month_days = 28
 
     saturday_found = False
-    while saturday_found == False:
+    while not saturday_found:
         dt = datetime.datetime(tg_year, tg_month, month_days)
         if dt.weekday() == 5:
             saturday_found = True
