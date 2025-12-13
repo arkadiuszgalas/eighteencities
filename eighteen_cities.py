@@ -67,11 +67,11 @@ def calculate_last_saturday_date(tg_month, tg_year):
     return month_days
 
 
-# Reading external file big-cities.txt containing list of Polish big cities
-bigcities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/provincial-cities.txt", encoding="utf8")
-data = bigcities.read()
-bigcities_list = data.split("\n")
-bigcities.close()
+# Reading external file provincial-cities.txt containing list of Polish cities
+cities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/provincial-cities.txt", encoding="utf8")
+data = cities.read()
+cities_list = data.split("\n")
+cities.close()
 
 # Reading external file special-city.txt containing name of special (last) city
 special_city = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/special-city.txt")
@@ -79,8 +79,8 @@ data_special = special_city.read()
 data_special_list = data_special.split("\n")
 special_city.close()
 
-# Reading length bigcities_list list
-len_bigcities = len(bigcities_list)
+# Reading length of cities_list list
+len_cities = len(cities_list)
 
 # Reading external file restricted-cities.txt with list of cities excluded from drawing
 restricted_cities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/restricted/restricted-cities.txt")
@@ -94,11 +94,11 @@ len_restricted_cities = len(restricted_cities_list) - 1
 # Decision logic what file to select city
 city_sel_name = ''
 area_sel_name = ''
-if len_bigcities > len_restricted_cities:
-    bigcity_selected = select_polish_city(bigcities_list, restricted_cities_list)
+if len_cities > len_restricted_cities:
+    bigcity_selected = select_polish_city(cities_list, restricted_cities_list)
     city_sel_name = bigcity_selected[0:bigcity_selected.find("|")]
     area_sel_name = bigcity_selected[bigcity_selected.find("|") + 1:len(bigcity_selected)]
-elif len_bigcities == len_restricted_cities:
+elif len_cities == len_restricted_cities:
     bigcity_selected = select_polish_city(data_special_list, restricted_cities_list)
     city_sel_name = bigcity_selected[0:bigcity_selected.find("|")]
     area_sel_name = bigcity_selected[bigcity_selected.find("|") + 1:len(bigcity_selected)]
@@ -115,7 +115,7 @@ current_dttm_fm = current_dttm.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
 date_selected = datetime.datetime(year_selected, month_selected, last_day_selected)
 
 # Decision logic what information save in selected-cities.txt and in restricted-cities.txt
-if len_bigcities >= len_restricted_cities:
+if len_cities >= len_restricted_cities:
     cities_selected = open("/Users/arkadiuszgalas/Documents/python/eighteencities/selected/selected-cities.txt", "a")
     cities_selected.write(
         current_dttm_fm + str(" ") + date_selected.strftime("%d.%m.%Y") + str(" ") + str(city_sel_name) + str(
