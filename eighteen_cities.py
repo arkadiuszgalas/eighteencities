@@ -95,13 +95,13 @@ len_restricted_cities = len(restricted_cities_list) - 1
 city_sel_name = ''
 area_sel_name = ''
 if len_cities > len_restricted_cities:
-    bigcity_selected = select_polish_city(cities_list, restricted_cities_list)
-    city_sel_name = bigcity_selected[0:bigcity_selected.find("|")]
-    area_sel_name = bigcity_selected[bigcity_selected.find("|") + 1:len(bigcity_selected)]
+    polish_city_selected = select_polish_city(cities_list, restricted_cities_list)
+    city_sel_name = polish_city_selected[0:polish_city_selected.find("|")]
+    area_sel_name = polish_city_selected[polish_city_selected.find("|") + 1:len(polish_city_selected)]
 elif len_cities == len_restricted_cities:
-    bigcity_selected = select_polish_city(data_special_list, restricted_cities_list)
-    city_sel_name = bigcity_selected[0:bigcity_selected.find("|")]
-    area_sel_name = bigcity_selected[bigcity_selected.find("|") + 1:len(bigcity_selected)]
+    polish_city_selected = select_polish_city(data_special_list, restricted_cities_list)
+    city_sel_name = polish_city_selected[0:polish_city_selected.find("|")]
+    area_sel_name = polish_city_selected[polish_city_selected.find("|") + 1:len(polish_city_selected)]
 
 # Calculating last Saturday in the month
 month_shift = draw_number_of_months()
