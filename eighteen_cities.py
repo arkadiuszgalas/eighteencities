@@ -1,4 +1,5 @@
 import datetime
+import os
 import random
 
 # lists containing month numbers
@@ -66,6 +67,9 @@ def calculate_last_saturday_date(tg_month, tg_year):
 
     return month_days
 
+# Preparing file configuration
+dir_name = os.path.dirname(__file__)
+filename_sel = os.path.join(dir_name,'selected/selected-cities.txt')
 
 # Reading external file provincial-cities.txt containing list of Polish cities
 cities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/provincial-cities.txt", encoding="utf8")
@@ -116,7 +120,7 @@ date_selected = datetime.datetime(year_selected, month_selected, last_day_select
 
 # Decision logic what information save in selected-cities.txt and in restricted-cities.txt
 if len_cities >= len_restricted_cities:
-    cities_selected = open("/Users/arkadiuszgalas/Documents/python/eighteencities/selected/selected-cities.txt", "a")
+    cities_selected = open(filename_sel,"a",encoding="utf8")
     cities_selected.write(
         current_dttm_fm + str(" ") + date_selected.strftime("%d.%m.%Y") + str(" ") + str(city_sel_name) + str(
             " ") + str(area_sel_name) + "\n")
@@ -127,7 +131,7 @@ if len_cities >= len_restricted_cities:
     cities_restricted.write(str(city_sel_name) + "\n")
     cities_restricted.close()
 else:
-    cities_selected = open("/Users/arkadiuszgalas/Documents/python/eighteencities/selected/selected-cities.txt", "a")
+    cities_selected = open(filename_sel,"a",encoding="utf-8")
     cities_selected.write(
         current_dttm_fm + str(" ") + str("No more cities on the list. I hope you had a great time." + "\n"))
     cities_selected.close()
