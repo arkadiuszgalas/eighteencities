@@ -70,15 +70,18 @@ def calculate_last_saturday_date(tg_month, tg_year):
 # Preparing file configuration
 dir_name = os.path.dirname(__file__)
 filename_sel = os.path.join(dir_name,'selected/selected-cities.txt')
+filename_prov = os.path.join(dir_name,'available/provincial-cities.txt')
+filename_spec = os.path.join(dir_name,'available/special-city.txt')
+filename_rest = os.path.join(dir_name,'restricted/restricted-cities.txt')
 
 # Reading external file provincial-cities.txt containing list of Polish cities
-cities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/provincial-cities.txt", encoding="utf8")
+cities = open(filename_prov, "r", encoding = "utf8")
 data = cities.read()
 cities_list = data.split("\n")
 cities.close()
 
 # Reading external file special-city.txt containing name of special (last) city
-special_city = open("/Users/arkadiuszgalas/Documents/python/eighteencities/available/special-city.txt")
+special_city = open(filename_spec, "r", encoding = "utf8")
 data_special = special_city.read()
 data_special_list = data_special.split("\n")
 special_city.close()
@@ -87,7 +90,7 @@ special_city.close()
 len_cities = len(cities_list)
 
 # Reading external file restricted-cities.txt with list of cities excluded from drawing
-restricted_cities = open("/Users/arkadiuszgalas/Documents/python/eighteencities/restricted/restricted-cities.txt")
+restricted_cities = open(filename_rest, "r", encoding = "utf8")
 data_restricted = restricted_cities.read()
 restricted_cities_list = data_restricted.split("\n")
 restricted_cities.close()
@@ -120,14 +123,14 @@ date_selected = datetime.datetime(year_selected, month_selected, last_day_select
 
 # Decision logic what information save in selected-cities.txt and in restricted-cities.txt
 if len_cities >= len_restricted_cities:
-    cities_selected = open(filename_sel,"a",encoding="utf8")
+    cities_selected = open(filename_sel, "a", encoding = "utf8")
     cities_selected.write(
         current_dttm_fm + str(" ") + date_selected.strftime("%d.%m.%Y") + str(" ") + str(city_sel_name) + str(
             " ") + str(area_sel_name) + "\n")
     cities_selected.close()
 
     # Writing information about selected city to restricted-cities.txt
-    cities_restricted = open("/Users/arkadiuszgalas/Documents/python/eighteencities/restricted/restricted-cities.txt", "a")
+    cities_restricted = open(filename_rest, "a", encoding = "utf8")
     cities_restricted.write(str(city_sel_name) + "\n")
     cities_restricted.close()
 else:
