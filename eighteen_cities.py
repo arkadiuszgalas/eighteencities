@@ -89,7 +89,11 @@ special_city.close()
 # Reading length of cities_list list
 len_cities = len(cities_list)
 
-# Reading external file restricted-cities.txt with list of cities excluded from drawing
+# Checking if file restricted-cities.txt exists
+if not os.path.isfile(filename_rest):
+   fr = open(filename_rest, "x", encoding = "utf8")
+
+# Read from restricted-cities.txt file and create list of cities excluded from drawing
 restricted_cities = open(filename_rest, "r", encoding = "utf8")
 data_restricted = restricted_cities.read()
 restricted_cities_list = data_restricted.split("\n")
@@ -117,8 +121,8 @@ year_selected = calculate_target_year(month_shift)
 last_day_selected = calculate_last_saturday_date(month_selected, year_selected)
 
 # Writing information about selected city to selected-cities.txt
-current_dttm = datetime.datetime.now()
-current_dttm_fm = current_dttm.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
+current_ts = datetime.datetime.now()
+current_dttm_fm = current_ts.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
 date_selected = datetime.datetime(year_selected, month_selected, last_day_selected)
 
 # Decision logic what information save in selected-cities.txt and in restricted-cities.txt
