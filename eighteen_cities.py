@@ -138,8 +138,4 @@ if len_cities >= len_restricted_cities:
     cities_restricted.write(str(city_sel_name) + "\n")
     cities_restricted.close()
 else:
-    cities_selected = open(filename_sel,"a",encoding="utf-8")
-    cities_selected.write(
-        current_ts_fm + str(" ") + str("No more cities on the list. I hope you had a great time." + "\n"))
-    cities_selected.close()
     print("No more cities on the list. I hope you had a great time.")
