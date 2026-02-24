@@ -122,14 +122,14 @@ last_day_selected = calculate_last_saturday_date(month_selected, year_selected)
 
 # Writing information about selected city to selected-cities.txt
 current_ts = datetime.datetime.now()
-current_dttm_fm = current_ts.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
+current_ts_fm = current_ts.strftime("%Y-%m-%d %H:%M:%S.%f")[:-4]
 date_selected = datetime.datetime(year_selected, month_selected, last_day_selected)
 
 # Decision logic what information save in selected-cities.txt and in restricted-cities.txt
 if len_cities >= len_restricted_cities:
     cities_selected = open(filename_sel, "a", encoding = "utf8")
     cities_selected.write(
-        current_dttm_fm + str(" ") + date_selected.strftime("%d.%m.%Y") + str(" ") + str(city_sel_name) + str(
+        current_ts_fm + str(" ") + date_selected.strftime("%d.%m.%Y") + str(" ") + str(city_sel_name) + str(
             " ") + str(area_sel_name) + "\n")
     cities_selected.close()
 
@@ -140,6 +140,6 @@ if len_cities >= len_restricted_cities:
 else:
     cities_selected = open(filename_sel,"a",encoding="utf-8")
     cities_selected.write(
-        current_dttm_fm + str(" ") + str("No more cities on the list. I hope you had a great time." + "\n"))
+        current_ts_fm + str(" ") + str("No more cities on the list. I hope you had a great time." + "\n"))
     cities_selected.close()
     print("No more cities on the list. I hope you had a great time.")
