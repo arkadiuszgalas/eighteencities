@@ -91,7 +91,10 @@ len_cities = len(cities_list)
 
 # Checking if file restricted-cities.txt exists
 if not os.path.isfile(filename_rest):
-   fr = open(filename_rest, "x", encoding = "utf8")
+    fr = open(filename_rest, "x", encoding = "utf8")
+# Checking if file selected-cities.txt exists
+if not os.path.isfile(filename_sel):
+    fs = open(filename_sel, "x", encoding = "utf8")
 
 # Read from restricted-cities.txt file and create list of cities excluded from drawing
 restricted_cities = open(filename_rest, "r", encoding = "utf8")
