@@ -74,6 +74,10 @@ filename_prov = os.path.join(dir_name,'available/provincial-cities.txt')
 filename_spec = os.path.join(dir_name,'available/special-city.txt')
 filename_rest = os.path.join(dir_name,'restricted/restricted-cities.txt')
 
+# Logging files configuration
+filename_sel_log = os.path.join(dir_name,'selected/log-selected.txt')
+filename_rest_log = os.path.join(dir_name,'restricted/log-restricted.txt')
+
 # Reading external file provincial-cities.txt containing list of Polish cities
 cities = open(filename_prov, "r", encoding = "utf8")
 data = cities.read()
@@ -135,10 +139,16 @@ if len_cities >= len_restricted_cities:
         current_ts_fm + str(" ") + date_selected.strftime("%d.%m.%Y") + str(" ") + str(city_sel_name) + str(
             " ") + str(area_sel_name) + "\n")
     cities_selected.close()
+    log_selected = open(filename_sel_log, "a", encoding="utf8")
+    log_selected.write(current_ts_fm + " row added to selected-files.txt file" + "\n")
+    log_selected.close()
 
     # Writing information about selected city to restricted-cities.txt
     cities_restricted = open(filename_rest, "a", encoding = "utf8")
     cities_restricted.write(str(city_sel_name) + "\n")
     cities_restricted.close()
+    log_restricted = open(filename_rest_log, "a", encoding = "utf8")
+    log_restricted.write(current_ts_fm + " row added to restricted-cities.txt file" + "\n")
+    log_restricted.close()
 else:
     print("No more cities on the list. I hope you had a great time.")
